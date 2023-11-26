@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: biocat-deployment
+spec:
+  selector:
+    app: biocat
+  ports:
+    - protocol: TCP
+      port: 32777
+      targetPort: 5000
+  type: NodePort

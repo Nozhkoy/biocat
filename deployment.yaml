@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: biocat-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: biocat
+  template:
+    metadata:
+      labels:
+        app: biocat
+    spec:
+      containers:
+      - name: biocat-container
+        image: nozhkoytop/biocat:latest
+        ports:
+        - containerPort: 5000
